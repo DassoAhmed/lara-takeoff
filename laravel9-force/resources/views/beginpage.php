@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>EstateAgency Bootstrap Template - Index</title>
+  <title>Real Invest</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -138,7 +138,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.html">Estate<span class="color-b">Agency</span></a>
+      <a class="navbar-brand text-brand" href="index.html">Real <span class="color-b">Invest</span></a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
@@ -992,6 +992,12 @@
                 </li>
                 <li class="color-a">
                   <span class="color-text-a">Email .</span> +54 356 945234
+                </li>
+                <li class="color-a">
+                  <span class="color-text-a">City </span> {{ config('company.address.city') }}
+                </li>
+                <li class="color-a">
+                  <span class="color-text-a">Street </span> {{ config('company.address.street') }}
                 </li>
               </ul>
             </div>
