@@ -10,7 +10,7 @@
     <div>
         <x-filament::header.heading>
             <div class="flex items-center">
-                <div><img class="mr-2 w-20" src="/real-invest-logo.png" alt="logo"></div>
+                <div><img class="mr-2 w-10" src="/real-invest-logo.png" alt="logo"></div>
                 <div>{{ $heading }} </div>
             </div>
 
