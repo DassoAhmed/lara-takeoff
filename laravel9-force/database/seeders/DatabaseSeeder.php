@@ -24,6 +24,9 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Property::factory(50)->create();
 
+        \App\Models\Customer::factory(10)->create();
+
+
 
     }
 }
