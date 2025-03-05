@@ -9,14 +9,30 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements FilamentUser, HasAvatar
 {
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+
+    //Authorizing access to the admin panel
+    public function canAccessFilament(): bool
+    {
+        return str_ends_with($this->email, 'dassoahmed@gmail.com') && $this->hasVerifiedEmail();
+    }
+
+    //Setting up avatar
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->avatar_url;
+    }
+
 
     /**
      * The attributes that are mass assignable.

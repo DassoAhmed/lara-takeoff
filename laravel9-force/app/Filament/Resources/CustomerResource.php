@@ -12,6 +12,8 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Database\Eloquent\Model;
+
 
 class CustomerResource extends Resource
 {
@@ -34,6 +36,7 @@ class CustomerResource extends Resource
                 Forms\Components\TextInput::make('password')
                     ->password()
                     ->required()
+                    ->hiddenOn('edit')
                     ->maxLength(255),
             ]);
     }
@@ -62,6 +65,25 @@ class CustomerResource extends Resource
                 Tables\Actions\RestoreBulkAction::make(),
             ]);
     }
+
+    public ?Model $record = null;
+
+
+    public static string $resource = CustomerResource::class;
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            CustomerResource\Widgets\CustomerOverview::class,
+        ];
+    }
+
+    public static function getWidgets(): array
+{
+    return [
+        CustomerResource\Widgets\CustomerOverview::class,
+    ];
+}
 
     public static function getRelations(): array
     {
