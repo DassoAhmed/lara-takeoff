@@ -20,6 +20,7 @@ class CustomerFactory extends Factory
            'name' => $this->faker->realTextBetween(25,45),
            'email' => $this->faker->realTextBetween(100,150),
            'password' => $this->faker->password(),
+           'email_verified_at' => now(),
         ];
     }
 }

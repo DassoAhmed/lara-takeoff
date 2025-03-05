@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-
+            $table->string('title');
+             $table->text('description');
+             $table->string('country');
+             $table->string('city');
+             $table->string('address');
+             $table->unsignedInteger('price');
             $table->softDeletes();  // adding soft deletes
             $table->timestamps();
         });
