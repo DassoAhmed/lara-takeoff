@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
+
+            $table->softDeletes();  // adding soft deletes
             $table->timestamps();
         });
     }
